@@ -1,0 +1,503 @@
+
+/* Ensure body and html take up the full height of the viewport */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* Prevent scrollbars */
+}
+
+#root {
+  height: 100%;
+}
+
+
+/* Styles for the main title (h1) */
+.main-title {
+  color: white;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Poppins', sans-serif;
+  font-size: 56px;
+  transition: opacity 0.3s ease;
+}
+
+/* Styles for the subtitle (h2) */
+.sub-title {
+  color: white;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 10px;
+  transition: opacity 0.3s ease;
+}
+
+/* Styles for the button */
+.cta-button {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 30px;
+  font-size: 18px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+/* State when disabled */
+.disabled {
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 800px) {
+  .main-title {
+    top: 50%; /* Adjust top for h1 */
+    font-size: 40px;
+    margin: 10px;
+  }
+
+  .sub-title {
+    top: 80%; /* Adjust top for h2 */
+    font-size: 18px;
+    margin: 10px;
+  }
+
+  .cta-button {
+    top: 90%; /* Adjust top for button */
+    margin: 10px;
+  }
+}
+
+
+
+/* Media query for smaller screens */
+@media (max-width: 1100px) {
+  .main-title {
+    top: 40%; /* Adjust top for h1 */
+    font-size: 40px;
+  }
+
+  .sub-title {
+    top: 53%; /* Adjust top for h2 */
+    font-size: 18px;
+  }
+
+  .cta-button {
+    top: 63%; /* Adjust top for button */
+  }
+}
+
+
+/* Fullscreen Canvas */
+.canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Canvas behind the navbar */
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    background: #000000; /* Black background for neon effect */
+    font-size: 14px;
+  }
+  
+  body, button, input {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+  }
+  
+
+  .glowing-text {
+    color: cyan;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 0 5px cyan, 0 0 10px cyan, 0 0 15px cyan, 0 0 20px cyan;
+}
+
+
+.neon-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.neon-button {
+  background-color: transparent;
+  border: 2px solid cyan;
+  color: cyan;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  font-family: 'Arial', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 5px cyan, 0 0 10px cyan, 0 0 15px cyan;
+  box-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+
+
+.container {
+  background: #1b1b1b;
+  padding: 80px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 25px rgba(0, 255, 255, 0.5), 0px 0px 50px rgba(0, 255, 255, 0.3);
+}
+
+.screen {
+  background-color: #1a1a1a;
+  padding: 40px;
+  margin: 10px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+}
+
+.screen-body {
+  margin: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.screen-body-item {
+  width: 48%;
+}
+
+.left {
+  text-align: left;
+}
+
+.app-title {
+  font-size: 36px;
+  color: #00ffff;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+  margin-bottom: 30px;
+}
+
+.app-title span {
+  display: block;
+}
+
+.app-contact {
+  font-size: 16px;
+  color: #a6a6a6;
+  margin-top: 20px;
+}
+
+.app-form {
+  background: transparent;
+  padding: 20px;
+}
+
+.app-form-group {
+  margin-bottom: 20px;
+}
+
+.app-form-control {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #00ffff;
+  border-radius: 8px;
+  background-color: #0d0d0d;
+  color: #00ffff;
+  font-size: 18px;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 255, 255, 0.6);
+  margin-bottom: 15px;
+}
+
+.app-form-control::placeholder {
+  color: #80ffff;
+}
+
+.message .app-form-control {
+  height: 120px;
+}
+
+.app-form-group.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.app-form-button {
+  padding: 15px 30px;
+  margin: 5px;
+  border: none;
+  background-color: #00ffff;
+  color: #1a1a1a;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.app-form-button:hover {
+  background-color: #00bfbf;
+}
+
+.app-form-button:active {
+  transform: translateY(2px);
+}
+
+
+.about-me-card {
+  color: #00FFFF; /* Neon cyan text */
+  background: none;
+  border-radius: 20px;
+  padding: 20px 30px; /* Adjusted padding for better proportion */
+  width: 500px;
+  max-width: 600px; /* Increased max-width for a more balanced appearance */
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  margin: 20px auto; /* Centering with auto margins */
+  position: relative; /* Needed for gradient border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+.about-me-card:hover {
+  transform: scale(1.03); /* Slightly enlarge on hover */
+}
+
+.about-me-title {
+  font-size: 32px; /* Larger title size */
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-shadow: 0 0 15px;
+  animation: glow 1.5s infinite alternate; /* Animated glow effect */
+}
+
+.about-me-card p {
+  font-size: 24px; /* Slightly larger paragraph text */
+  line-height: 1.6; /* Increased line height for readability */
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* Adding a subtle gradient border */
+.about-me-card::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 20px;
+  background: linear-gradient(45deg, rgba(0, 255, 255, 0.4), rgba(0, 150, 150, 0.4));
+  z-index: -1; /* Place behind the card */
+  filter: blur(10px);
+}
+
+.neon-container {
+  padding: 2rem;
+  animation: fadeIn 2s ease-in-out;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.neon-title {
+  text-align: center;
+  font-size: 4rem;
+  color: cyan;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 80px #00ffff;
+  margin: 0;
+  letter-spacing: 2px;
+  animation: neonGlow 1.5s ease-in-out infinite alternate;
+}
+
+.neon-description {
+  text-align: center;
+  font-size: 1.5rem;
+  color: cyan;
+  font-family: 'Roboto', sans-serif;
+  text-shadow: 0 0 3px #00ffff, 0 0 5px #00ffff, 0 0 10px #00ffff;
+  margin-top: 1rem;
+  animation: textGlow 1.5s ease-in-out infinite alternate;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+@keyframes neonGlow {
+  from {
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 80px #00ffff;
+  }
+  to {
+    text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 60px #00ffff, 0 0 80px #00ffff, 0 0 120px #00ffff;
+  }
+}
+
+@keyframes textGlow {
+  from {
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+  }
+  to {
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.neon-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: cyan;
+  background-color: black;
+  border: 2px solid cyan;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  box-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan;
+  text-decoration: none;
+}
+
+.neon-button:hover {
+  color: black;
+  background-color: cyan;
+  box-shadow: 0 0 20px cyan, 0 0 30px cyan, 0 0 40px cyan;
+}
+
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8); /* Darker and semi-transparent background */
+  box-shadow: 0 8px 30px rgba(0, 255, 255, 0.2); /* Softer shadow */
+  z-index: 100;
+}
+
+.navbar-title {
+  color: #00ffff; /* Neon Cyan */
+  font-size: 26px;
+  font-weight: 600; /* Slightly less bold for a cleaner look */
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.6); /* Softer shadow */
+  letter-spacing: 1px; /* Subtle spacing for elegance */
+}
+
+.navbar-buttons {
+  display: flex;
+  gap: 30px;
+}
+
+.navbar-button {
+  background-color: transparent;
+  border: 1px solid #00ffff; /* Thinner border */
+  color: #00ffff;
+  padding: 8px 18px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 3px; /* Less rounded corners */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+}
+
+.navbar-button:hover {
+  background-color: #00ffff;
+  color: #111; /* Darker text on hover for better contrast */
+  transform: scale(1.05); /* Slight scaling effect for interactivity */
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+.glowing-circle-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid cyan;
+  box-shadow: 0 0 20px cyan, 0 0 40px cyan, 0 0 60px cyan;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth scaling and glow */
+}
+
+.glowing-circle-button:hover {
+  transform: scale(1.2); /* Scale up on hover */
+  box-shadow: 0 0 30px cyan, 0 0 50px cyan, 0 0 70px cyan; /* Increase the glow on hover */
+}
+
+.button-text {
+  z-index: 1;
+}
+
+.glowing-circle-button:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.3), transparent 100%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse-glow 3s infinite ease-in-out;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px cyan, 0 0 40px cyan, 0 0 60px cyan;
+  }
+  50% {
+    box-shadow: 0 0 10px cyan, 0 0 30px cyan, 0 0 50px cyan;
+  }
+}
