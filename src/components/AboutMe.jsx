@@ -7,7 +7,6 @@ import { Html, useGLTF, useTexture } from '@react-three/drei';
 import groundVertex from '../shaders/Projects/vertex.glsl';
 import groundFragment from '../shaders/Projects/fragment.glsl';
 import gsap from 'gsap';
-import music from '../../public/nightDetective.mp3' // import music from public folder
 
 import flameVertex from '../shaders/About/flameVertex.glsl'
 import flameFragment from '../shaders/About/flameFragment.glsl'
@@ -19,10 +18,7 @@ const AboutMe = () => {
 
     const textures = ['./noiseTextures/noise2Classic.png','./noiseTextures/noise3Classic.png','./noiseTextures/noise4Classic.png',  'img.JPG']
     const pointsRef = useRef(); // Reference to the points object
-    const audioRef = useRef();
-    const analyserRef = useRef();
-
-
+   
     
 
 
@@ -118,28 +114,13 @@ const AboutMe = () => {
 
         
 
-        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        const analyser = audioContext.createAnalyser();
-        analyser.fftSize = 256;
-        analyserRef.current = analyser;
-    
-        const audio = new Audio(music);
-        audio.loop = true;
-        audio.play();
-    
-        const source = audioContext.createMediaElementSource(audio);
-        source.connect(analyser);
-        source.connect(audioContext.destination);
-    
-        audioRef.current = audio;
+       
     
 
 
         return () => {
             // Cleanup when component unmounts
             geometry.dispose();
-            audioRef.current.pause();
-          audioRef.current = null;
         };
     }, [parameters.count, parameters.radius]);
 
