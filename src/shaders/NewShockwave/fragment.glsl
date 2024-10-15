@@ -37,7 +37,7 @@ void main()
     myRadiusUv *= 2.0;
 
     float totalRings = 0.0;
-    for(float j = 0. ;  j < uFrequency * 20.0 ; j++)
+    for(float j = 0. ;  j < 20.0 ; j++)
     {
         float d = abs(sin(length(myRadiusUv * j) - uTime * 0.2)); // Time-based animation
         d = 1.0 - smoothstep(0.1, 0.4, d); 

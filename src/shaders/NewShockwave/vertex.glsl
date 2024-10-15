@@ -28,7 +28,7 @@ void main()
         float displacement = smoothstep(ringRadius - 0.4, ringRadius + 0.4, distanceFromCenter) * 0.3; // Smoothing for ring width
 
         // Accumulate displacement for each ring
-        totalDisplacement += displacement * (0.5 + audioDisplacement * displacement); // Z displacement based on audio frequency and smoothstep
+        totalDisplacement += displacement * (0.5 + displacement); // Z displacement based on audio frequency and smoothstep
     }
 
     // Limit total displacement to avoid overflow issues

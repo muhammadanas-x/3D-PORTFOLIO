@@ -21,9 +21,9 @@ const Shockwave = () => {
     analyser.fftSize = 256;
     analyserRef.current = analyser;
 
-    const audio = new Audio('./nightdetective.mp3');
-    audio.loop = true;
-    audio.play();
+    const audio = new Audio('https://drive.google.com/uc?export=download&id=1Ve7EikFpvLb4__xodSnKLkFFnJiLO2X1');
+audio.loop = true;
+audio.play();
 
     const source = audioContext.createMediaElementSource(audio);
     source.connect(analyser);
