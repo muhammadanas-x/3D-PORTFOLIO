@@ -2,8 +2,10 @@ import React, { useRef, useEffect } from 'react'
 import { useFrame } from '@react-three/fiber'
 import shockwaveNewVertex from '../src/shaders/NewShockwave/vertex.glsl'
 import shockwaveNewFragment from '../src/shaders/NewShockwave/fragment.glsl'
-import music from '../public/nightdetective.mp3' // import music from public folder
 import * as THREE from 'three'
+
+
+
 let myUniforms = {
   uTime: { value: 0 },
   uFrequency: { value: 0 }
@@ -19,7 +21,7 @@ const Shockwave = () => {
     analyser.fftSize = 256;
     analyserRef.current = analyser;
 
-    const audio = new Audio(music);
+    const audio = new Audio('./nightdetective.mp3');
     audio.loop = true;
     audio.play();
 
