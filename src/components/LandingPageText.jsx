@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { Link } from 'react-router-dom';
 
 const LandingPageText = ({ setShowMore }) => {
   const [disabled, setDisabled] = useState(false);
@@ -21,13 +22,13 @@ const LandingPageText = ({ setShowMore }) => {
         A Creative Developer Portfolio
       </h2>
 
-      <a
-      href='/projects'
+      <Link
+      to={"/projects"}
         className={`cta-button ${disabled ? 'disabled' : ''}`}
         onClick={handleClick}
       >
         Show More <i className="fas fa-arrow-right" style={{ marginLeft: '10px' }}></i>
-      </a>
+      </Link>
     </div>
   );
 };
