@@ -9,6 +9,7 @@ import flameFragment from '../shaders/Projects2/flameFragment.glsl'
 
 import { gsap } from 'gsap'
 import { Html, useTexture } from '@react-three/drei'
+import { Link } from 'react-router-dom'
 
 
 
@@ -67,7 +68,18 @@ const Projects2 = () => {
       "RushCycle",
       "Don't Get Fried",
   ];
-  
+  const links = [
+    'https://midnyy.itch.io/',
+    'https://github.com/muhammadanas-x/React-three-fiber-Car-scene',
+    'https://github.com/muhammadanas-x/Shrinking-Planet',
+    'https://www.linkedin.com/posts/muhammad-anas-1a9824262_excited-to-share-my-second-semester-project-activity-7101169026919202816-QIzI?utm_source=share&utm_medium=member_desktop',
+    'https://github.com/muhammadanas-x/Cosmic-Defense',
+    'https://github.com/muhammadanas-x/Car-Showroom',
+    'https://midnyy.itch.io/',
+    'https://midnyy.itch.io/',
+    'https://midnyy.itch.io/',
+    'https://github.com/muhammadanas-x/Don-t-Get-Fried'
+]
   const descriptions = [
       "This Game Was made for Brackeys Game Jam 2024.1",
       "This is just a simple front end Website made with React Three Fiber",
@@ -85,6 +97,7 @@ const Projects2 = () => {
   const htmlContent = titles.map((title, index) => ({
       title: title,
       description: descriptions[index],
+      links: links[index],
       position: [-2.4, 0.6 + index * 2.4, 0], // Adjust the position dynamically
   }));
 
@@ -316,7 +329,8 @@ const Projects2 = () => {
                         {content.description}
                     </p>
                     {/* Button */}
-                    <button
+                    <a
+                    href={content.links}
                         style={{
                             backgroundColor: '#1a1a1a', // dark gray/blackish background
                             color: '#00ffff', // neon cyan text
@@ -331,7 +345,7 @@ const Projects2 = () => {
                         onMouseLeave={(e) => (e.target.style.backgroundColor = '#1a1a1a')} // reset background on hover leave
                     >
                         Show Details
-                    </button>
+                    </a>
                 </div>
             </Html>
         ))}
