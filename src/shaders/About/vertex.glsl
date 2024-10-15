@@ -2,7 +2,6 @@ varying vec2 vUv;
 
 uniform float uTime;
 uniform float uRadius; // Add uniform for radius
-uniform float uFrequency;
 
 attribute float aRandom;
 attribute float aSize;

@@ -129,13 +129,6 @@ const AboutMe = () => {
         gridUniforms.uTime.value = state.clock.getElapsedTime();
         fireUniforms.uTime.value = state.clock.getElapsedTime();
 
-        const frequencyData = new Uint8Array(analyserRef.current.frequencyBinCount);
-        analyserRef.current.getByteFrequencyData(frequencyData);
-    
-        // Get average frequency value
-        const avgFrequency = frequencyData.reduce((a, b) => a + b, 0) / frequencyData.length;
-        gridUniforms.uFrequency.value = avgFrequency / 256; // Normalize to 0-1 range
-
 
 
 

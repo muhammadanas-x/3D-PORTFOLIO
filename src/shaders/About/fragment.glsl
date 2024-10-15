@@ -1,6 +1,5 @@
 varying vec2 vUv;
 
-uniform float uFrequency;
 
 
 void main()
