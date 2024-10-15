@@ -21,12 +21,13 @@ const LandingPageText = ({ setShowMore }) => {
         A Creative Developer Portfolio
       </h2>
 
-      <button
+      <a
+      href='/projects'
         className={`cta-button ${disabled ? 'disabled' : ''}`}
         onClick={handleClick}
       >
         Show More <i className="fas fa-arrow-right" style={{ marginLeft: '10px' }}></i>
-      </button>
+      </a>
     </div>
   );
 };
