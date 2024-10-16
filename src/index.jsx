@@ -24,7 +24,7 @@ const App = () => {
       <div className='canvas-container'>
         {/* Navbar */}
         <div className="navbar">
-          <Link href="/" className="navbar-title">My Portfolio</Link>
+          <Link to="/" className="navbar-title">My Portfolio</Link>
           <div className="navbar-buttons">
             <Link to="/aboutme" className="navbar-button">About Me</Link>
             <Link to="/projects" className="navbar-button">Projects</Link>
